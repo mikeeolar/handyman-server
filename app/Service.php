@@ -12,7 +12,7 @@ class Service extends Model
    		return $this->belongsTo('App\Category');
    	}
 
-    public function userServices() {
-        return $this->hasMany('App\UserServices');
+    public function providerServices() {
+        return $this->hasMany('App\ProviderService');
     }
 }

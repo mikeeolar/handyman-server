@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class UserService extends Model
+class ProviderService extends Model
 {
-    public function users() {
-        return $this->belongsTo('App\User', 'user_id', 'id');
+    public function providers() {
+        return $this->belongsTo('App\Provider', 'provider_id', 'id');
     }
 
     public function categories() {

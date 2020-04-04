@@ -8,8 +8,8 @@ class JobProfile extends Model
 {
     protected $guarded = [];
 
-    public function users() {
-        return $this->belongsTo('App\User', 'user_id', 'id');
+    public function providers() {
+        return $this->belongsTo('App\Provider', 'provider_id', 'id');
     }
 //    public function()
 }

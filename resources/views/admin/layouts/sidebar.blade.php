@@ -52,13 +52,14 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ url('admin/categories') }}" 
+                            class="nav-link {{ request()->is('admin/categories*') ? 'active' : '' }} ">
                                 <i class="fas fa-boxes nav-icon"></i>
                                 <p>Service Category</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../../index2.html" class="nav-link">
+                            <a href="{{ url('admin/services') }}" class="nav-link {{ request()->is('admin/services**') ? 'active' : '' }} ">
                                 <i class="fas fa-wrench nav-icon"></i>
                                 <p>Service Type</p>
                             </a>

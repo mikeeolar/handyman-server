@@ -18,6 +18,8 @@ Route::prefix('admin')->group(function () {
         Route::get('/logout', 'AdminUserController@logout');
         Route::resource('/users', 'UserController');
         Route::resource('/providers', 'ProviderController');
+        Route::resource('/categories', 'CategoryController');
+        Route::resource('/services', 'ServiceController');
 
         Route::get('/yes/{id}', 'ProviderController@verified')->name('provider.verified');
         Route::get('/no/{id}', 'ProviderController@notVerified')->name('provider.notVerified');

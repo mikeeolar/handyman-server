@@ -16,6 +16,7 @@ class ProviderController extends Controller
     public function index()
     {
         $providers = Provider::all();
+        // dd($providers[0]->first_name);
         return view('admin.providers.index', compact('providers'));
     }
 
@@ -109,9 +110,9 @@ class ProviderController extends Controller
 //        return view('admin.providers.details', compact('userProfile'));
 //        $profile = User::find($id)->with('jobProfile');
 //        return view('admin.providers.details', compact('profile'));
-        $userProfile = JobProfile::with(['users', 'users.userServices', 'users.userServices.categories', 'users.userServices.services'])
-            ->where('user_id', $id)->get();
-        return view('admin.providers.details', compact('userProfile'));
+        $providerProfile = JobProfile::with(['providers', 'providers.providerServices', 'providers.providerServices.categories', 'providers.providerServices.services'])
+            ->where('provider_id', $id)->get();
+        return view('admin.providers.details', compact('providerProfile'));
     }
 
     /**

@@ -13,12 +13,18 @@ class CategoryController extends Controller
      *
      * @return Response
      */
-    public function index()
-    {
+
+    public function __invoke(Request $request) {
         $categories = Category::all();
         return response()->json([
             'categories'=> $categories
         ]);
+    }
+
+    public function index()
+    {
+        $categories = Category::all();
+        return view('admin.services.categories-index', compact('categories'));
     }
 
     /**
@@ -28,7 +34,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.services.categories-create');
     }
 
     /**

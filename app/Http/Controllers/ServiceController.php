@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\service;
+use App\Service;
+use App\Category;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -28,9 +29,10 @@ class ServiceController extends Controller
         ]);
     }
 
-    public function index($categoryId = null)
+    public function index()
     {
-        //
+        $services = Service::all();
+        return view('admin.services.services-index', compact('services'));
     }
 
     /**
@@ -40,7 +42,8 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        return view('admin.services.services-create', compact('categories'));
     }
 
     /**

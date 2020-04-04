@@ -3,39 +3,64 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Booking;
 use App\HandyWork;
 use App\User;
-use App\UserService;
+use App\ProviderService;
 use App\JobProfile;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HandyController extends Controller
 {
-    public function userServices($serviceId = null)
+    public function providerServices($serviceId = null)
     {
         if (isset($serviceId)) {
-            $user_services = UserService::with(['users', 'categories', 'services'])
+            $provider_services = ProviderService::with(['providers', 'categories', 'services'])
                 ->where('service_id', $serviceId)->get();
         } else {
-            $user_services = UserService::with(['users', 'categories', 'services'])->get();
+            $provider_services = ProviderService::with(['providers', 'categories', 'services'])->get();
         }
 
         return response()->json([
-            'UserServices' => $user_services
+            'ProviderServices' => $provider_services
         ]);
     }
 
-    public function userProfile($userId = null)
+    public function providerProfile($providerId = null)
     {
-        if (isset($userId)) {
-            $userProfile = JobProfile::with(['users', 'users.userServices', 'users.userServices.categories', 'users.userServices.services'])
-                ->where('user_id', $userId)->get();
+        if (isset($providerId)) {
+            $providerProfile = JobProfile::with(['providers', 'providers.providerServices', 'providers.providerServices.categories', 'providers.providerServices.services'])
+                ->where('provider_id', $providerId)->get();
         } else {
-            $userProfile = JobProfile::with(['users', 'users.userServices', 'users.userServices.categories', 'users.userServices.services'])->get();
+            $providerProfile = JobProfile::with(['providers', 'providers.providerServices', 'providers.providerServices.categories', 'providers.providerServices.services'])->get();
         }
 
         return response()->json([
-            'UserProfile' => $userProfile
+            'ProviderProfile' => $providerProfile
+        ]);
+    }
+
+    public function jobDetails($providerId = null) {
+        if (isset($providerId)) {
+            $jobDetails = Booking::with(['providers', 'providers.providerServices', 'providers.providerServices.categories', 'providers.providerServices.services'])
+                ->where('provider_id', $providerId)->get();
+        } else {
+            $jobDetails = Booking::with(['providers', 'providers.userServices', 'providers.providerServices.categories', 'providers.providerServices.services'])->get();
+        }
+
+        return response()->json([
+            'ProviderBookings' => $jobDetails
+        ]);
+    }
+
+    public function cancelBooking($providerId = null) {
+        $booking = Booking::where('provider_id', $providerId);
+        $booking->update(['status' => 'Cancelled']);
+
+        return response()->json([
+            'Message' => 'Booking status updated'
         ]);
     }
 }

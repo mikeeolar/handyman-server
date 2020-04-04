@@ -22,15 +22,21 @@ Route::resource('/categories', 'CategoryController');
 
 Route::get('/services/{categoryId?}', 'ServiceController');
 
-Route::get('/user-services/{serviceId?}', 'HandyController@userServices');
+Route::get('/provider-services/{providerId?}', 'HandyController@providerServices');
 
-Route::get('/user-profile/{userId?}', 'HandyController@userProfile');
+Route::get('/provider-profile/{providerId?}', 'HandyController@providerProfile');
 
 Route::get('/get-users/{id?}', 'Auth\AuthController@getUsers');
 
 Route::get('/auth/user', 'Auth\AuthController@user');
 
 Route::post('new-booking', 'BookingController@store');
+
+Route::get('provider-bookings/{userId}', 'BookingController@show');
+
+Route::get('job-details/{providerId}', 'HandyController@jobDetails');
+
+Route::get('/cancel/{providerId}', 'HandyController@cancelBooking');
 
 Route::middleware('auth:api')->get('/users', function (Request $request) {
 	return $request->user();

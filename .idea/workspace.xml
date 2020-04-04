@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="598bb23b-7ce6-4b77-a7fa-24c8ceaa0f75" name="Default Changelist" comment="" />
+    <list default="true" id="598bb23b-7ce6-4b77-a7fa-24c8ceaa0f75" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Booking.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Booking.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BookingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BookingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HandyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HandyController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProviderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProviderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ServiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ServiceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/JobProfile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/JobProfile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Provider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Provider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Service.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Service.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/UserService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/providers/details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/providers/details.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/providers/fields.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/providers/fields.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +32,23 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -133,10 +170,13 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -156,6 +196,9 @@
       <updated>1585239679798</updated>
       <workItem from="1585239714079" duration="1857000" />
       <workItem from="1585243137062" duration="359000" />
+      <workItem from="1585423069970" duration="1892000" />
+      <workItem from="1585466761899" duration="4429000" />
+      <workItem from="1585903622145" duration="396000" />
     </task>
     <servers />
   </component>
@@ -163,9 +206,41 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585473242847">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1585473242847" />
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1585473062460">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1585473062459" />
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1585423149937">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585423149937" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1585423149936">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585423149936" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1585423149936">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585423149936" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1585423149937">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585423149937" />
+    <state x="147" y="0" key="SettingsEditor" timestamp="1585471850254">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="147" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1585471850254" />
     <state x="384" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1585239734353">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="384" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1585239734353" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1585423124052">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1585423124052" />
   </component>
 </project>
