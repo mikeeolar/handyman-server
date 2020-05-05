@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class JobController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all()->where('role', '!=', 'provider-app');
-        return view('admin.users.index', compact('users'));
+        //
     }
 
     /**

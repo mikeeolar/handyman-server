@@ -2,9 +2,12 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Laravel\Passport\HasApiTokens;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Provider extends Model
+class Provider extends Authenticatable
 {
     protected $guarded = [];
 
@@ -19,4 +22,8 @@ class Provider extends Model
     public function booking() {
         return $this->hasMany('App\Booking', 'id', 'provider_id');
     }
+
+    // public function job() {
+    //     return $this->hasMany('App\Job', 'id', 'provider_id');
+    // }
 }

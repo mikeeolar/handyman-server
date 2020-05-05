@@ -21,16 +21,14 @@ class BookingController extends Controller
     		'category' => 'required|string',
     		'service' => 'required|string',
     		'bookDate' => 'required',
-		    'timeFrom' => 'required',
-		    'timeTo'=> 'required',
+		    'time' => 'required',
 		    'location' => 'required',
 		    'address'=> 'required',
 		    'addInfo'=> 'required'
     	]);
 
         $bookDate = date("Y-m-d", strtotime($request->bookDate));
-        $timeFrom = date("h:ia", strtotime($request->timeFrom));
-        $timeTo = date("h:ia", strtotime($request->timeTo));
+        $time = date("h:ia", strtotime($request->time));
 
     	$booking = new Booking;
 
@@ -39,8 +37,7 @@ class BookingController extends Controller
     	$booking->category = $request->category;
     	$booking->service = $request->service;
     	$booking->book_date = $bookDate;
-    	$booking->time_from = $timeFrom;
-    	$booking->time_to = $timeTo;
+    	$booking->time = $time;
     	// $booking->book_date = $request->bookDate;
     	// $booking->time_from = $request->timeFrom;
     	// $booking->time_to = $request->timeTo;
@@ -62,11 +59,13 @@ class BookingController extends Controller
             $userBookings = Booking::with(['users', 'providers', 'providers.providerServices', 'providers.providerServices.categories', 'providers.providerServices.services'])
                 ->where('user_id', $id)->get();
         } else {
-            $userBookings = Booking::with(['users', 'providers', 'providers.userServices', 'providers.providerServices.categories', 'providers.providerServices.services'])->get();
+            $userBookings = Booking::with(['users', 'providers', 'providers.providerServices', 'providers.providerServices.categories', 'providers.providerServices.services'])->get();
         }
+        $books = Booking::all();
 
         return response()->json([
-            'ProviderBookings' => $userBookings
+            'ProviderBookings' => $userBookings,
+            'Date' => date("D d M,Y", strtotime($books[0]->book_date))
         ]);
     }
 }

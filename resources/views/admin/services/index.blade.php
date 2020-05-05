@@ -20,6 +20,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Name</th>
+                                <th>Category</th>
                                 <th>Description</th>
                                 <th>Registered At</th>
                                 <th>Actions</th>
@@ -30,6 +31,7 @@
                                 <tr>
                                     <td>{{ $service->id }}</td>
                                     <td>{{ $service->name }}</td>
+                                    <td>{{ $service->categories->name }}</td>
                                     <td>{{ $service->description }}</td>
                                     <td>{{ $service->created_at->diffForHumans() }}</td>
                                     <td>
@@ -54,6 +56,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Name</th>
+                                <th>Category</th>
                                 <th>Description</th>
                                 <th>Registered At</th>
                                 <th>Actions</th>

@@ -40,4 +40,8 @@ class User extends Authenticatable
     public function booking() {
         return $this->hasMany('App\Booking', 'id', 'user_id');
     }
+
+    public function job() {
+        return $this->hasMany('App\Job', 'id', 'user_id');
+    }
 }

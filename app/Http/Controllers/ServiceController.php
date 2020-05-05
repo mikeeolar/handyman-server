@@ -20,9 +20,9 @@ class ServiceController extends Controller
 
     public function __invoke(Request $request, $categoryId = null) {
         if (isset($categoryId)) {
-            $services = Service::with('category')->where('category_id', $categoryId)->get();
+            $services = Service::with('categories')->where('category_id', $categoryId)->get();
         } else {
-            $services = Service::with('category')->get();
+            $services = Service::with('categories')->get();
         }
         return response()->json([
             'services'=> $services
@@ -31,8 +31,27 @@ class ServiceController extends Controller
 
     public function index()
     {
-        $services = Service::all();
-        return view('admin.services.services-index', compact('services'));
+        if (isset($serviceId)) {
+            $services = Service::with(['categories'])
+                ->where('service_id', $serviceId)->get();
+        } else {
+            $services = Service::with(['categories'])->get();
+        }
+        return view('admin.services.index', compact('services'));
+    }
+
+    public function list()
+    {
+        if (isset($serviceId)) {
+            $services = Service::with(['categories'])
+                ->where('service_id', $serviceId)->get();
+        } else {
+            $services = Service::with(['categories'])->get();
+        }
+
+        return response()->json([
+            'Services' => $services
+        ]);
     }
 
     /**
@@ -43,7 +62,7 @@ class ServiceController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('admin.services.services-create', compact('categories'));
+        return view('admin.services.create', compact('categories'));
     }
 
     /**

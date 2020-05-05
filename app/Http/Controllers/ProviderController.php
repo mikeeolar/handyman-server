@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\JobProfile;
 use App\Provider;
+use App\User;
 use Illuminate\Http\Request;
 
 class ProviderController extends Controller
@@ -89,6 +90,20 @@ class ProviderController extends Controller
             'address' => $request->address,
             'image' => $imagePath,
             'verified' => 0
+        ]);
+
+        User::create([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            'gender' => $request->gender,
+            'phone_number' => $request->phone_number,
+            'location' => $request->location,
+            'address' => $request->address,
+            'image' => $imagePath,
+            'verified' => 0,
+            'role' => 'provider-app'
         ]);
 
         $request->session()->flash('msg', 'New Provider Created');

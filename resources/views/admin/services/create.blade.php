@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('page')
-    Add New Category
+    Add New Service
 @endsection
 
 @section('content')
@@ -20,14 +20,14 @@
                 @endif
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">New Category</h3>
+                        <h3 class="card-title">New Service</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
                     <div class="card-body">
-                        <form action="{{ url('admin/categories')}}" method="post" enctype="multipart/form-data">
+                        <form action="{{ url('admin/services')}}" method="post" enctype="multipart/form-data">
                             @csrf
-                            @include('admin.services.categories-fields')
+                            @include('admin.services.fields')
                         </form>
                     </div>
                 </div>

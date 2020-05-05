@@ -4,10 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Booking extends Model
+class Job extends Model
 {
+    protected $guarded = [];
 
-	protected $guarded = [];
+    public $timestamps = false;
 
     public function providers() {
         return $this->belongsTo('App\Provider', 'provider_id', 'id');
@@ -17,7 +18,7 @@ class Booking extends Model
         return $this->belongsTo('App\User', 'user_id', 'id');
     }
 
-    public function job() {
-        return $this->hasMany('App\Job', 'booking_id', 'id');
+    public function bookings() {
+        return $this->belongsTo('App\Booking', 'booking_id', 'id');
     }
 }
